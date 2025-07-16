@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">                                                          <!-- Para o navegador entender os caracteres especiais -->  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">                            <!-- Para o navegador entender a compatibilidade, especificamento para o EDGE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">          <!-- Para a janela de visualização ficar boa em varios dispositivos-->
+    <meta name="author" content="Ana Carolina">
+    <link rel="stylesheet" href="frontend/styles/reset.css">   
+    <link rel="stylesheet" href="frontend/styles/style.css">                                            
+    <title>Vital Água - Gerenciamento</title>
+</head>    
+<body id="topo">
+  <header class="cabecalho">
+    <div class="container__menu">
+        <input type="checkbox" id="menu" class="container__botao">
+        <label for="menu">
+        <span class="cabecalho__menu-hamburguer  container__imagemMenu"></span>
+        </label> 
+      <ul class="lista-menu">
+          <li class="lista-menu__titulo">Categorias</li>
+            <li class="lista-menu__itens"><a href="index.html" class="lista-menu__link">Home</a></li>          
+        <li>
+          <details class="lista-menu__dropdown">
+            <summary class="lista-menu__summary lista-menu__link">Clientes</summary>
+            <ul class="lista-submenu">
+              <li class="lista-menu__itens"><a href="customers.html" class="lista-menu__link">Cadastrar</a></li>
+              <li class="lista-menu__itens"><a href="registered.html" class="lista-menu__link">Clientes cadastrados</a></li>             
+            </ul>
+          </details>
+        </li>
+        <li class="lista-menu__itens"><a href="sales.html" class="lista-menu__link">Vendas</a></li>
+        <li class="lista-menu__itens"><a href="stock.html" class="lista-menu__link">Estoque</a></li>       
+      </ul>
+    </div>
+        <button class="botao-toggle" onclick="alternarModo()">Modo escuro 🌙</button>
+  </header>
+    <main class="container-geral apresentacao">           <!-- inclui container aqui -->
+        <section class="apresentacao__conteudo">                <!-- a class dentro de outra, precisa carregar o nome da classe pai -->
+            <h1 class="apresentacao__conteudo__titulo">Controle de estoque. <span class="destaque-titulo">Gerenciamento e mobilidade.</strong></h1>
+            
+              <p class="apresentacao__conteudo__subtitulo">Seja bem vindo ao app da Vital Água.</p>
+              <p class="apresentacao__conteudo__subtitulo">Entre, beba uma água e aproveite! </p>
+
+            <div class="apresentacao__links">
+                <h2 class="apresentacao__links__subtitulo">Acesse nossas redes:</h2>
+                <a class="apresentacao__links__botao" href="https://www.instagram.com/vitalaguadc/">Instagram
+                    <img src="frontend/imagens/instagram.png" alt="Logo Instagram"> 
+                </a>
+                <a class="apresentacao__links__botao" href="https://api.whatsapp.com/message/ECDIOG7B3FBGO1?autoload=1&app_absent=0">Whatsapp
+                    <img src="frontend/imagens/github.png" alt="Logo Whatsapp">
+                </a>
+            </div>
+        </section>
+
+    </main>
+<footer class="rodape">
+  <div class="rodape__container">
+    <div class="rodape__info">
+      <h4>Vital Água</h4>
+      <p>Controle de estoque e gestão de vendas com mobilidade.</p>
+    </div>
+    <div class="rodape__links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Suporte</a>
+      <a href="#topo" class="rodape__link">Voltar ao topo</a>
+    </div>
+    <div class="rodape__creditos">
+      <p>Desenvolvido por Ana Carolina © 2025</p>
+    </div>
+  </div>
+</footer>
+
+    <script src="./index.js"></script>
+    <script src="./darkmode.js"></script>
+</body>
+</html>
