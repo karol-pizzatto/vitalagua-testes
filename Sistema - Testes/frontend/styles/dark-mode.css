@@ -1,0 +1,113 @@
+body.dark-mode .cabecalho__menu-hamburguer {
+    filter: invert(100%) brightness(200%);
+}
+
+.botao-toggle:hover {
+    opacity: 0.5;
+}
+
+body.dark-mode .card__titulo,
+body.dark-mode .titulo-enderecos,
+body.dark-mode .card__titulo::after,
+body.dark-mode .titulo-enderecos::after  {
+    color: var(--azul-navy);
+}
+
+body.dark-mode .cadastroCliente__campo__cep::placeholder {
+    background: url("../imagens/lupa-contorno-dark-20px.svg") no-repeat;
+}
+
+body.dark-mode .botao-salvar:hover {
+    background-color: var(--botao-salvarHover);
+    box-shadow: 0 12px 12px 0 rgba(255, 254, 254, 0.24), 0 17px 50px 0 rgba(253, 253, 253, 0.19);
+    transform: scale(1.05);
+}
+
+body.dark-mode .campo-observacoes label {
+    color: var(--cor-branco);
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: var(--cor-fundo-boxCadastro); /* ou algo como var(--cor-fundo-boxCadastro) */
+    color: var(--cor-branco);
+    border: 1px solid var(--cor-bordainput);
+}
+
+body.dark-mode input::placeholder {
+    color: var(--cor-placehover);    
+}
+
+/*CARDS GRANDES*/
+body.dark-mode .cadastroCliente_card,
+body.dark-mode .abasCadastro_card,
+body.dark-mode .tabela-clientes-container {
+    border: 1px solid var(--borda-pBlack);
+    box-shadow: 0 0 13px rgba(255,255,255,0.2);
+}
+
+body.dark-mode .tabs {
+    background: linear-gradient(90deg, #0f1f2e 0%, #1e3c72 100%);
+    box-shadow: none;
+    /*backdrop-filter: none;*/
+}
+
+body.dark-mode .tab-btn.active {
+    background: rgba(128, 223, 255, 0.1); /* gelo azulado translúcido */
+    box-shadow: none; /* remove o borrão! */
+    transform: scale(1.05);
+}
+
+body.dark-mode #referencias-numeroUm input,
+body.dark-mode #referencias-numeroDois input,
+body.dark-mode #referencias-numeroTres input {     
+    border: 1px solid var(--borda-cinzaEscuro);
+}
+
+/* Corrige cor do autofill (autocomplete do navegador) no dark mode */ 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 1000px  #333333 inset !important;
+    border: 1px outset var(--borda-cinzaEscuro) !important;
+    -webkit-text-fill-color: var(--cor-placehover) !important;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #FFF !important;
+}
+
+/*Clientes cadastrados--------------------------------------------------------------------------------------------------*/
+
+body.dark-mode .controle-colunas button {
+    background-color: transparent;
+}
+
+body.dark-mode .controle-colunas button:hover {
+    background-color: var(--botao-filtrosHover);
+}
+
+body.dark-mode #tabelaClientes thead {
+    background-color: var(--cor-cabeçalho);      
+}
+
+body.dark-mode #tabelaClientes thead th {
+    text-shadow: 3px 3px 6px var(--azul-navy);
+}
+
+body.dark-mode #tabelaClientes {
+    background-color: var(--cor-celulasTabela); 
+    color: var(--cor-texto-tabela); 
+}
+
+body.dark-mode #tabelaClientes tbody tr:hover {
+    background-color: var(--cor-hoverTabelaClientes);   
+}
+
+body.dark-mode #textoFiltro { 
+    border: 1px outset var(--cor-bordainput);
+    transition: border-color 0.2s;
+}
+
+body.dark-mode #colunaFiltro option {
+    background-color: var(--cor-fundo-boxCadastro);
+}

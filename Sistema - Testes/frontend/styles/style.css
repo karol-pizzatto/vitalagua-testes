@@ -1,0 +1,1005 @@
+@import url("../styles/header.css");
+@import url("../styles/abas.css");
+@import url("../styles/registered.css");
+@import url("../styles/dark-mode.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /*fonte do texto*/
+
+/* Variáveis Globais ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-fundo);    
+    font-family: var(--fonte-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: auto;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+:root {
+  /* Cores principais */
+  --cor-principal: mediumblue;
+  --cor-secundaria: darkblue;
+  --cor-preto-LightMode: var(--cor-preto);
+  --cor-preto: #000000;
+  --cor-branco: #ffffff;
+
+  /* Tons de azul */
+  --cor-azulClaroM: #1E90FF;
+  --cor-botao: var(--cor-azulClaroM);
+  --cor-fundobotao: #114b86;
+  --azul-gelo: #C7F1FF;  
+  --azul-navy: #000080;
+ 
+
+  /*  Degradês e sombras */
+  --cor-azuldegrade: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 19%, rgba(0,212,255,1) 100%);
+  --botao-salvar: linear-gradient(to right, #40bf79, #2fa165);
+  --botao-salvarHover: #39ac6d;
+  --botao-sombra-salverHover: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  --branco-translucido: rgba(245, 245, 245, 0.5);
+
+  /* Fundo e boxes */
+  --cor-fundo: #d9e4ee;
+  --cor-fundo-boxCadastro: #f4f8fb;
+  --fundo-botoes-abas: linear-gradient(90deg,rgba(128, 223, 255, 1) 0%, rgba(36, 182, 255, 1) 100%);
+  --cards-abas: #e7f5fe;
+  /*box-shadow - botoes abas : 0 8px 20px rgba(0, 0, 0, 0.08); */
+
+  /*  Inputs e bordas */
+  --cor-bordainput: #a6a6a6;
+  --borda-input-selecionado: 0 0 10px rgba(128, 223, 255, 0.7), 0 0 30px rgba(128, 223, 255, 0.3);
+  --cor-sombrainput: lightskyblue;  
+  --borda-card: #C7F1FF;
+
+  /* Texto e links */
+  --cor-link: hotpink;
+  --cor-letra-rodape: #f5f5f5;
+  --cor-azul-rodape-hover: #00bfff;
+  --cor-texto: #002244;
+
+    /* Tabelas e cabeçalhos */
+  --cor-celulasTabela: #1a1a1a;
+  --cor-tabelaClientes-cabeçalho: lightskyblue;
+  --cor-tabelaClientes-cabeçalho-letras: #003366;
+  --cor-tabelaClientes-hover: #f9f9f9;
+  --cor-texto-tabela: #f0f0f0;
+  --cor-cabeçalho: #343434;
+  --cor-hoverTabelaClientes: #c1f2f8;
+
+  /*Botões de ação */
+  --botao-editarClientes: #ffcc00;
+  --botao-excluirClientes: #ff4444;
+  --botao-ativo-abasCadastro: linear-gradient(90deg,rgba(128, 223, 255, 1) 0%, rgba(36, 182, 255, 1) 100%);              /*linear-gradient(to right, #80dfff, #66ccff)*/
+
+  /*Fontes */
+  --fonte-texto: "Poppins", sans-serif;
+  --fonte-texto1: "Savate", sans-serif;
+
+  /* Dimensões padrões */
+  --altura-input: 2rem;
+  --padding-input: 0.4rem;
+  --borda-input: 7px;
+}
+
+body.dark-mode {
+  /* Fundo e contrastes */
+  --cor-fundo: #000000;
+  --cor-fundo-boxCadastro: #121212;
+  --cards-abas: #2c2c2c;                /*cinza escuro*/
+  --azul-navy: #4f77a3;
+
+  /*Bordas*/  
+  --borda-pBlack: #262626;
+  --borda-card: #424242;
+  --borda-cinzaEscuro: #424242;
+
+  /* Cores principais */
+  --cor-principal: #61dafb;
+  --cor-secundaria: #eeeeee;
+  --cor-preto-LightMode: #bbbbbb;               /*no dark é esse clarinho*/
+
+  /* Texto e preenchimentos */
+  --cor-branco: #eeeeee;
+  --cor-preto: #000000;
+  --cor-texto: #E4EAF1;
+  --cor-texto-tabela: #f0f0f0;
+
+  /* Botões */
+  --cor-botao: #3182ce;
+  --cor-fundobotao: #22578c;
+  --botao-salvarHover-dark: 0 12px 12px 0 rgba(255, 254, 254, 0.24), 0 17px 50px 0 rgba(253, 253, 253, 0.19);
+  --botao-filtrosHover: darkblue;
+
+  /* Inputs */
+  --cor-bordainput: #424242;
+  --cor-placehover: #bbb;
+
+  /* Tabelas e cabeçalhos */
+  --cor-celulasTabela: #1a1a1a;             
+  --cor-tabelaClientes-cabeçalho: lightskyblue;
+  --cor-tabelaClientes-cabeçalho-letras: #003366;
+  --cor-tabelaClientes-hover: #f9f9f9;  
+  --cor-cabeçalho: #303030;                                 /*#343434*/
+  --cor-hoverTabelaClientes: rgba(30, 58, 95, 0.4);
+
+
+  /* Links e rodapé */
+  --cor-link: #ff77dd;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.container__teste {
+    background-color: pink;
+    padding: 1rem;
+}
+
+.titulo {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.texto_teste {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: whitesmoke;
+    color: #000000;
+    padding: 1rem;    
+    width: 300px;
+    height: 500px;
+}
+
+.container-senha {
+    background-color: #22578c;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.titulo_senha {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+#senha {
+    background-color: rgba(245, 245, 245, 0.5);
+    padding: 10px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 7px;
+    font-size: 16px;
+    
+}
+
+.botao_senha {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: lightblue;
+    color: black;
+    cursor: pointer;
+}
+
+/*ALERTAS -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.mensagem-erro {
+    display: none;              /* continue escondida até precisar */
+    color: var(--cor-branco);
+    background-color: red;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-family: var(--fonte-texto);
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.field {
+    position: relative;
+    margin-bottom: 2.5rem;      /* ajuste a altura se precisar de mais/menos espaço */
+}
+
+.field.has-error .cadastroCliente__campo__cep,
+.field.has-error .cadastroCliente__campo,
+.field.has-error .cadastroCliente__campo__campo-menor {
+    border-color: red;
+    box-shadow: 0 0 4px rgba(217, 83, 79, 0.6);
+}
+
+.field .error-message {
+    position: absolute;
+    bottom: -1.2rem;          /* encosta no fim da área reservada pela margin */
+    left: 0;
+    width: auto;                 /* ocupa toda a largura do field */
+    display: none;              /* só aparece quando houver erro */
+    background-color: red;
+    color: var(--cor-branco);
+    padding: 4px 6px;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 5;                  /* acima de tudo dentro do field */
+    box-sizing: border-box;      /* padding não expande além do field */
+}
+
+.mensagem-sucesso {
+    display: inline-block;              /* escondida por padrão */
+    color: #155724;
+    padding: 10px 10px 10px 10px;  
+    font-family: var(--fonte-texto);
+    font-weight: bold;
+    font-size: 2rem;    
+    /*background-color: red;*/
+}
+
+/*CORPO DA PÁGINA --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.container-geral {    
+    width: 100%;   
+    margin: 0 auto;
+    padding: 1rem 0;    
+}
+
+.apresentacao {     
+    font-family: var(--fonte-texto);
+    padding: 5% 0;     
+    display: flex;   
+    justify-content: center; 
+    align-items: center; 
+    /*background-color: yellow;  */  
+}
+
+.apresentacao__conteudo { 
+    max-width: 600px;       
+    width: 100%;                      /* largura do conteudo escrito no caso*/
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;            /* exibe o conteudo em coluna */
+    align-items: center;
+    gap: 2rem;                           /* espaçamento entre os elementos do conteudo */    
+    border-radius: 12px;
+    /*background-color: yellowgreen;  */                     
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--cor-preto-LightMode);
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.apresentacao__conteudo__subtitulo,
+.apresentacao__links__subtitulo {    
+    font-size: 1rem;
+    color: var(--cor-preto-LightMode);
+    text-align: center;
+}
+
+.destaque-titulo {                                  /* pode ser usado STRONG/SPAN para destaque de texto */                        
+    color: var(--cor-principal);
+    font-size: 2rem;
+}
+
+.apresentacao__links {
+    display: flex;                     
+    flex-direction: column;
+    align-items: center;        
+    gap: 1.5rem;
+    padding-top: 10%;    
+}
+
+.apresentacao__links__subtitulo {
+    font-weight: 400;
+}
+
+.apresentacao__links__botao {                       /*TEMOS UM NOVO CODIGO DE LINKS DE BOTAO*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--cor-botao);
+    color: var(--cor-branco);
+    border: 2px dotted var(--cor-preto-LightMode);
+    border-radius: 0.4rem;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    width: fit-content;                  /* só o tamanho necessário */
+    min-width: 200px;                    /* largura mínima p/ manter visual */
+    transition: background-color 0.3s;
+}
+
+.apresentacao__links__botao:hover {         
+    background-color: var(--cor-fundobotao);
+}
+
+
+/*PAGINA DE CLIENTES ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.cadastroCliente_card {    
+    width: 95%;
+    margin: 2rem auto;
+    padding: 2rem;        
+    background: var(--cor-fundo-boxCadastro);  
+    border-radius: 10px;    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem 2rem;
+}
+
+/*________________________________________________________________________________________________________________________________________________________*/
+
+.cadastro__tipo {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    margin-left: -15px;
+    gap: 2rem;
+    padding: 1rem;       
+}
+
+.linha-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 350px;    
+}
+
+.linha-cadastro.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;      
+}
+
+.linha-cadastro.field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.linha-cadastro.field input {
+    max-width: 100%;
+    height: 2.4rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--cor-bordainput);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    
+}
+
+.linha-cadastro label {
+    margin: 0;
+    font-weight: 500;
+    color: var(--cor-preto-LightMode);
+}
+
+.linha-cadastro input,
+.linha-cadastro select,
+.linha-cadastro textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.linha-cadastro.field input:focus {
+    outline: none;
+    border-color: var(--azul-gelo);
+    box-shadow: var(--borda-input-selecionado);  
+}
+
+.checkbox-redondo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    color: var(--cor-preto-LightMode);
+}
+
+.checkbox-redondo input {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-redondo span {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--cor-preto-LightMode);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox-redondo input:checked + span::after {
+    content: "";
+    position: absolute;
+    top: 50%;       
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: var(--cor-fundobotao);
+    border-radius: 50%;
+}
+
+.cadastroCliente__campo,
+.cadastroCliente__campo__cep,
+.cadastroCliente__campo__campo-menor {
+    border: 1px solid var(--cor-bordainput);
+    border-radius: 7px;
+    padding: var(--padding-input);
+    font-family: var(--fonte-texto);
+}
+
+.cadastroCliente__campo__obs {
+    width: auto;
+}
+
+.cadastroCliente__campo__cep::placeholder {
+    background: url("../imagens/lupa-contorno-light-20px.svg") no-repeat;  
+    background-position: left center;  
+    padding-inline: 25px; 
+}
+
+#field-numero {
+    max-width: 6rem;
+}
+
+#campos-fisica,
+#campos-juridica,
+#dados-basicos {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.5rem;    
+    margin-top: 1rem;
+}
+
+#campos-fisica .linha-cadastro label,
+#campos-juridica .linha-cadastro label,
+#dados-basicos .linha-cadastro label {
+    font-weight: 500;
+    gap: 1rem;
+    padding-bottom: 0.3rem;
+}
+
+#campos-fisica input,         
+#campos-juridica input,
+#dados-basicos input {
+    gap: 1rem;
+    width: 80%;
+}
+
+.linha-salvar {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.botao-salvar {
+    background: var(--botao-salvar);
+    color: var(--cor-branco);
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    padding: 12px 30px;    
+    transition: background 0.2s;
+}
+
+.botao-salvar:hover {
+    background-color: var(--botao-salvarHover);
+    box-shadow: var(--botao-sombra-salverHover);
+    transform: scale(1.05);
+}
+
+/*FIELDSET E LEGEND ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.card__titulo,
+.titulo-enderecos {
+    grid-column: 1 / -1;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--azul-navy);
+    margin: 0.5rem 0 0 0.5rem;
+    display: flex;
+    width: 99%;
+}
+
+.card__titulo::after,
+.titulo-enderecos::after {
+    content: "";        
+    flex-grow: 1;     
+    border-bottom: 3px double var(--azul-navy); 
+    border-radius: 20px;  
+    
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Placeholder - fonte*/
+.cadastroCliente__campo::placeholder,
+.cadastroCliente__campo__cep::placeholder, 
+.cadastroCliente__campo__campo-menor::placeholder,
+#enderecoAdicional::placeholder,
+#telefoneCliente::placeholder,
+#celularCliente::placeholder,
+#emailCliente::placeholder,
+#bancoCliente::placeholder,
+#agenciaCliente::placeholder,
+#contaCliente::placeholder,
+#referencia1::placeholder,
+#referencia2::placeholder {
+    font-family: var(--fonte-texto1);
+}
+
+
+/*----------------------------------------------------------------------------------------------*/
+
+
+
+/* FIM DA PAGINA DE CLIENTES  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*DARK MODE --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Light Mode - Corrige o autofill claro */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 1000px var(--cor-fundo-boxCadastro) inset !important;
+    border: 1px solid var(--cor-bordainput) !important;
+    -webkit-text-fill-color: var(--cor-texto) !important;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #111 !important;
+}
+/*RODAPÉ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.rodape {
+    background: linear-gradient(90deg,rgba(10, 10, 35, 1) 4%, rgba(9, 9, 80, 1) 50%, rgba(8, 8, 147, 1) 67%, rgba(1, 1, 135, 1) 81%);
+    color: var(--cor-letra-rodape); /* texto clarinho */
+    padding: 2rem 1rem;
+    margin-top: auto;
+    opacity: 0;                         /*3 propridades de animação*/
+    transform: translateY(20px);
+    animation: fadeInRodape 1s ease forwards;
+}
+
+/*também de animação*/
+@keyframes fadeInRodape {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.rodape__info,
+.rodape__links,
+.rodape__creditos {
+    flex: 1 1 auto;
+}
+
+.rodape__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;  
+    flex-wrap: wrap;
+}
+
+.rodape__info h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.rodape__info p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+}
+
+.rodape__links {
+    display: flex;
+    gap: 0.5rem 1rem;
+    flex-wrap: wrap;    
+    justify-content: flex-start;
+}
+
+.rodape__links a {
+    color: var(--cor-letra-rodape);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.rodape__links a:hover {
+    color: var(--cor-azul-rodape-hover); 
+}
+
+.rodape__creditos p {
+    margin: 0.5rem 0 0;
+    font-size: 0.8rem;
+    color: var(--cor-letra-rodape);
+}
+
+/*RESPONSIVA--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 1200px) {
+    .cabecalho {         
+        width: 100%;
+    }
+
+    .apresentacao {        
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: 100%;
+    }
+
+    .cadastroCliente_card,
+    .abasCadastro_card,
+    .tabela-clientes-container  {        
+       width: calc(95% - 4rem);
+    }
+
+    .campos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rodape__container {
+        padding: 1rem 0;
+    }
+    
+}
+
+
+@media (max-width: 1199px) and (min-width: 992px) { 
+    .cabecalho {         
+        width: 100%;
+    }
+
+    .apresentacao {        
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: 100%;
+    }
+
+    .cadastroCliente_card,
+    .abasCadastro_card,
+    .tabela-clientes-container {        
+       width: calc(95% - 4rem);
+    }
+
+    .campos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rodape__container {
+        padding: 1rem 0;
+    }
+
+}
+
+
+@media (max-width: 991px) and (min-width: 681px) {
+    .cabecalho {        
+        width: 100%;
+    }
+
+    .cabecalho__menu {
+        justify-content: space-between;        
+    } 
+
+    .lista-menu {
+        width: 80vh;
+    }
+
+    .cadastroCliente_card,
+    .abasCadastro_card,
+    .tabela-clientes-container {        
+       width: calc(95% - 4rem);
+    }
+
+    .linha-cadastro {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;        
+        width: 100%;
+    }
+
+    #campos-fisica input,
+    #campos-juridica input,
+    #dados-basicos input {
+        width: 100%;
+    }   
+
+    .cadastroCliente__campo__campo-menor {
+        max-width: 4.5rem !important;
+    }
+
+    .linha-salvar {          
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;     
+    }
+
+    .container-referencias,
+    .container-dadosBancarios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+
+    #tabelaClientes thead th {
+        font-size: 1.2rem;        
+    }
+
+    /* esconde a coluna */
+    #tabelaClientes td:nth-child(4),
+    #tabelaClientes th:nth-child(4) {
+        display: none; 
+    }
+
+    #tabelaClientes td:nth-child(1),
+    #tabelaClientes th:nth-child(1) 
+    #tabelaClientes td:nth-child(2),
+    #tabelaClientes th:nth-child(2) {
+        width: 30%;
+    }
+
+    #tabelaClientes th[data-col="acoes"],
+    #tabelaClientes th:last-child,
+    #tabelaClientes td:last-child {
+        width: 8%;
+    }
+
+    .botao-salvar {
+        width: fit-content;
+    }
+    
+    .rodape__links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .cabecalho {
+       width: 100%;
+    }
+
+    .cabecalho__menu {
+        justify-content: space-between;        
+    } 
+
+    .lista-menu {
+        width: 80vh;
+    }
+
+    .apresentacao__links__botao {
+        width: 20%;
+        max-width: none;
+    }
+
+    .cadastroCliente_card,
+    .abasCadastro_card,
+    .tabela-clientes-container {        
+       width: calc(95% - 4rem);
+    }
+    
+    .linha-cadastro {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;        
+        width: 100%;
+    }
+
+    #campos-fisica input,
+    #campos-juridica input,
+    #dados-basicos input {
+        width: 100%;
+    }   
+
+    .cadastroCliente__campo,
+    .cadastroCliente__campo__cep {
+        max-width: 100%;    
+    }
+    
+    .cadastroCliente__campo__campo-menor {
+        max-width: 4.5rem !important;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .container-referencias  {
+        justify-items: center;
+    }  
+
+    .linha-salvar {          
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #tabelaClientes td:nth-child(4),
+    #tabelaClientes th:nth-child(4) {
+        display: none; 
+    }
+
+    .filtro-linhas input {     
+        margin-top: 1rem;
+    }
+
+    .rodape__container {   
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .rodape__info,
+    .rodape__links,
+    .rodape__creditos {
+        flex: 1 1 100%;
+        margin-bottom: 1rem;
+    }
+
+    .rodape__links {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 599px) {
+    .cabecalho {
+        width: auto;        
+    }
+
+    .cabecalho__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;     
+    }
+
+    .cabecalho__menu__link {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .apresentacao {
+        padding: 2rem 0;
+    }
+
+    .apresentacao__conteudo {
+        max-width: 90%;
+        padding: 1rem;
+    }
+    
+    .apresentacao__links__botao {
+        width: 10%;
+        max-width: none;
+    }
+
+    .lista-menu {
+        width: 100vh;
+    }
+
+    .cadastroCliente_card,
+    .abasCadastro_card,
+    .tabela-clientes-container {        
+       width: calc(95% - 4rem);
+    }
+    
+    .cadastroCliente__campo,
+    .cadastroCliente__campo__cep {
+        max-width: 100%;
+    }
+
+    .cadastroCliente__campo__campo-menor {
+        max-width: 4.5rem;
+    }
+
+    .linha-salvar {          
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .container-referencias  {
+        justify-items: center;
+        margin: 0.5rem;
+    }  
+
+    .card-informacoes {
+        margin: 1rem auto;
+    }
+
+    #referencias-numeroUm,
+    #referencias-numeroDois,
+    #referencias-numeroTres {
+        width: 90%;
+    }
+
+    /* TABELA */                          
+    #tabelaClientes td:nth-child(6),                    /*esconde as barras*/
+    #tabelaClientes th:nth-child(6) {
+        display: none; 
+    }
+
+    #tabelaClientes td,
+    #tabelaClientes th {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+
+    #tabelaClientes td:nth-child(2),
+    #tabelaClientes th:nth-child(2),
+    #tabelaClientes td:last-child,
+    #tabelaClientes th:last-child   {
+        width: auto;
+    }
+
+    .btn-editar,
+    .btn-excluir {
+        padding: 4px 6px;
+        font-size: 11px;
+    }
+
+    .rodape__links a {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .rodape__creditos p {
+        font-size: 0.75rem;
+    }
+}

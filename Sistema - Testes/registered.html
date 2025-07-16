@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Ana Carolina"/>
+    <link rel="stylesheet" href="frontend/styles/reset.css">
+    <link rel="stylesheet" href="frontend/styles/style.css"/>
+    <title>Vital Água – Clientes Cadastrados</title>
+</head>
+<body id="topo">
+  <header class="cabecalho">
+    <div class="container__menu">
+        <input type="checkbox" id="menu" class="container__botao">
+        <label for="menu">
+        <span class="cabecalho__menu-hamburguer  container__imagemMenu"></span>
+        </label> 
+      <ul class="lista-menu">
+          <li class="lista-menu__titulo">Categorias</li>
+            <li class="lista-menu__itens"><a href="index.html" class="lista-menu__link">Home</a></li>          
+        <li>
+          <details class="lista-menu__dropdown">
+            <summary class="lista-menu__summary lista-menu__link">Clientes</summary>
+            <ul class="lista-submenu">
+              <li class="lista-menu__itens"><a href="customers.html" class="lista-menu__link">Cadastrar</a></li>
+              <li class="lista-menu__itens"><a href="registered.html" class="lista-menu__link">Clientes cadastrados</a></li>             
+            </ul>
+          </details>
+        </li>
+        <li class="lista-menu__itens"><a href="sales.html" class="lista-menu__link">Vendas</a></li>
+        <li class="lista-menu__itens"><a href="stock.html" class="lista-menu__link">Estoque</a></li>       
+      </ul>
+    </div>
+        <button class="botao-toggle" onclick="alternarModo()">Modo escuro 🌙</button>
+  </header>
+
+  <main class="container-geral">
+        
+    <section class="lista-clientes">      
+
+        <div class="tabela-clientes-container">
+
+          <h2 class="card__titulo">Clientes</h2>
+                <div class="controle-colunas">
+
+                    <button onclick="toggleColuna('nome')" id="toggle-nome" class="toggle-coluna">
+                        <span id="emoji-nome">🙊</span> Nome
+                    </button>
+                    <button onclick="toggleColuna('endereco')" id="toggle-endereco" class="toggle-coluna">
+                        <span id="emoji-endereco">🙊</span> Endereço
+                    </button>
+                    <button onclick="toggleColuna('contato')" id="toggle-contato" class="toggle-coluna">
+                        <span id="emoji-telefone">🙊</span> Contato
+                    </button>
+                    <button onclick="toggleColuna('cidade')" id="toggle-cidade" class="toggle-coluna">
+                        <span id="emoji-cidade">🙊</span> Cidade
+                    </button>
+                    <button onclick="toggleColuna('status')" id="toggle-status" class="toggle-coluna">
+                        <span id="emoji-status">🙊</span> Status
+                    </button>
+                    <button onclick="toggleColuna('acoes')" id="toggle-acoes" class="toggle-coluna">
+                        <span id="emoji-acoes">🙊</span> Ações
+                    </button>
+
+                </div>
+
+            <div class="filtro-linhas">
+                <label for="colunaFiltro">Filtrar por:</label>
+                <select id="colunaFiltro">
+                    <option value="nome">Nome</option>
+                    <option value="endereco">Endereço</option>
+                    <option value="contato">Contato</option>
+                    <option value="cidade">Cidade</option>
+                </select>
+                <input type="text" id="textoFiltro" placeholder="Digite o texto…" />
+            </div>
+
+            <table id="tabelaClientes">
+                <thead>
+                <tr>
+                    <th data-col="nome">Nome</th>
+                    <th data-col="endereco">Endereço</th>
+                    <th data-col="contato">Contato</th>
+                    <th data-col="cidade">Cidade</th>
+                    <th data-col="status">Status</th>
+                    <th data-col="acoes">Ações</th>
+                </tr>
+                </thead>
+                <tbody id="listaClientes"></tbody>
+            </table>
+
+        </div>
+
+      </section>
+        
+  </main>
+
+<hr/><footer class="rodape">
+  <div class="rodape__container">
+    <div class="rodape__info">
+      <h4>Vital Água</h4>
+      <p>Controle de estoque e gestão de vendas com mobilidade.</p>
+    </div>
+    <div class="rodape__links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="frontend/suporte.html">Suporte</a>
+      <a href="#topo" class="rodape__link">Voltar ao topo</a>
+    </div>
+    <div class="rodape__creditos">
+      <p>Desenvolvido por Ana Carolina © 2025</p>
+    </div>
+  </div>
+</footer>
+
+    <script src="registered.js" defer></script>
+    <script src="darkmode.js" defer></script>
+</body>
+</html>
